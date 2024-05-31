@@ -45,5 +45,12 @@ public class StudentController {
         studentException.setTimestamps(System.currentTimeMillis());
         return new ResponseEntity<>(studentException,HttpStatus.BAD_REQUEST);
     }
-
+   @ExceptionHandler
+    public ResponseEntity<StudentException> allotherTypeOfError(Exception e){
+        StudentException studentException = new StudentException();
+        studentException.setStatus(HttpStatus.BAD_REQUEST.value());
+        studentException.setMessage(e.getMessage());
+        studentException.setTimestamps(System.currentTimeMillis());
+        return new ResponseEntity<>(studentException,HttpStatus.BAD_REQUEST);
+   }
 }
