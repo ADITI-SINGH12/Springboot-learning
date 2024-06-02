@@ -5,6 +5,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,8 +13,14 @@ import java.util.List;
 @Repository
 public class StudentDAOImpl implements StudentDAO{
 //Transactional annotations are used at the time when you are trying to modify , or update data
-    @PersistenceContext
+
     private EntityManager entityManager;
+
+    @Autowired
+    public StudentDAOImpl(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
+
     //Create Operation
     @Override
     @Transactional
