@@ -33,7 +33,7 @@ public class StudentDAOImpl implements StudentDAO{
       Student student =  entityManager.find(Student.class,id);
       return student;
     }
-    //ak
+    //helped monhuhjgjhghjgh
     //Read operation
     @Override
     public List<Student> readAllStudents() {
