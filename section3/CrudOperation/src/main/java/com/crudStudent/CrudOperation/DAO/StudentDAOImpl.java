@@ -33,8 +33,8 @@ public class StudentDAOImpl implements StudentDAO{
       Student student =  entityManager.find(Student.class,id);
       return student;
     }
-    //helped monhuhjgjhghjgh
-    //Read operation
+
+
     @Override
     public List<Student> readAllStudents() {
         TypedQuery<Student> studentTypedQuery = entityManager.
